@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -114,8 +115,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
+LOGOUT_URL = reverse_lazy('logout')
 STATIC_URL = 'static/'
+MEDIA_ROOT = '/home/iratein/iratein/media'
+MEDIA_URL = '/media/'
+STATIC_ROOT = '/home/iratein/iratein/static'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
