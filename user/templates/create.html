@@ -7,7 +7,24 @@
     <link rel="stylesheet" href="{% static 'styleguide.css' %}" />
     <link rel="stylesheet" href="{% static 'style.css' %}" />
     <style>
-        .sign-up {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"]{
+ float: none;
+ display: block;
+  width: 540px;
+  height: 48px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  position: relative;
+  background-color: #f8f8f8;
+  border-radius: 6px;
+  border: 1px solid;
+  border-color: #eaeaea;
+         }
+.sign-up {
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -123,7 +140,8 @@
   border-color: #eaeaea;
 }
 
-.sign-up .text-wrapper-4 {
+.sign-up .text-wrapper-4
+{
   position: relative;
   width: fit-content;
   font-family: "Inter-Regular", Helvetica;
@@ -133,6 +151,29 @@
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
+}
+label{
+  position: block;
+  font-family: "Inter-Regular", Helvetica;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #333;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+li{
+
+  font-family: "Inter-Regular", Helvetica;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--gray-1);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+
 }
 
 .sign-up .text-wrapper-5 {
@@ -215,13 +256,12 @@
           <div class="frame-3">
             <div class="frame-4">
               <div class="frame-5">
-                <div class="text-wrapper-3">Username</div>
-               <input class="div-wrapper" type="email" name="username">
+               <div class="">{{form}}</div>
               </div>
               <div class="frame-5">
-                <div class="text-wrapper-3">Password</div>
-                <input class="div-wrapper" type="password" name="password" >
+
               </div>
+
 
             </div>
              <input class="frame-6" type="submit" value="Sign up">
