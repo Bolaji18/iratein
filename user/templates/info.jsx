@@ -1,5 +1,6 @@
 {% load static %}
 import React from "react";
+import { Link } from 'react-router-dom';
 import { CaretDown } from "./CaretDown";
 import { LocationPinAlt1 } from "./LocationPinAlt1";
 import { Logout } from "./Logout";
@@ -17,10 +18,10 @@ export const Message = () => {
           <div class="frame">
             <div class="frame-2">
               <img class="img" src="{% static 'icon.png' %}" />
-             <a href="#" style="border:transparent;  text-decoration: none;" > <button class="frame-2" id="toggleBtn" type="submit" value="Messages" style="border:transparent; background-color: transparent; text-decoration: none; color:#fff">Messages</button></a>
+             <link to="#" style="border:transparent;  text-decoration: none;" > <button class="frame-2" id="toggleBtn" type="submit" value="Messages" style="border:transparent; background-color: transparent; text-decoration: none; color:#fff">Messages</button></link>
              <div class="framex">
 
-             <button class="frame-2" id="toggleBtn2" type="submit" value="Messages" style="border:transparent; background-color: transparent; text-decoration: none; color:#fff"><a href="{% url 'add2' %}" style="text-decoration:none; color:#fff">Add a person</a></button>
+             <button class="frame-2" id="toggleBtn2" type="submit" value="Messages" style="border:transparent; background-color: transparent; text-decoration: none; color:#fff">< link to="{% url 'add2' %}" style="text-decoration:none; color:#fff">Add a person</link></button>
              </div>
 
             </div>
@@ -74,15 +75,15 @@ export const Message = () => {
                   {% endif %}
                   {% if request.user.username == x.sender %}
 
-                    <a href="{{x.randoms}}/{{x.receiver}}"><div class="text-wrapper-8" style="text-decoration: underline;">{{x.receiver}}</div>
+                    <link to="{{x.randoms}}/{{x.receiver}}"><div class="text-wrapper-8" style="text-decoration: underline;">{{x.receiver}}</div></link>
                     <p class="p"></p></a>
                   {% endif %}
                             {% endfor %}
 
 
 
-                    <a href="#"><div class="text-wrapper-8"></div>
-                    <p class="p"></p></a>
+                <link to="#"><div class="text-wrapper-8"></div>
+                    <p class="p"></p></link>
 
                   </div>
 
