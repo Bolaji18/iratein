@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
@@ -53,12 +54,12 @@ def create(request):
 
    form= NewUserForm()
    return render(request=request, template_name="create.jsx", context={"form":form})
-
+@login_required
 def message(request):
 
      texts = textsrecieved.objects.all().values()
      return render(request=request, template_name="info.jsx", context={"texts":texts})
-
+@login_required
 def add(request):
      if request.method == "POST":
          randoms = random.randint(6288, 7289200298298)
@@ -72,6 +73,7 @@ def add(request):
 
      form= ads()
      return render(request=request, template_name="add.jsx", context={"form":form})
+@login_required
 def add2(request):
      if request.method == "POST":
          randoms = random.randint(6288, 7289200298298)
@@ -85,6 +87,7 @@ def add2(request):
 
      form= ads()
      return render(request=request, template_name="add.jsx", context={"form":form})
+@login_required
 def shows(request, randoms,sender):
     if request.method == "POST":
          randoms = random.randint(6288, 7289200298298)
@@ -99,6 +102,7 @@ def shows(request, randoms,sender):
     form= ads2()
     text= textsrecieved.objects.get(randoms=randoms)
     return render(request=request, template_name="add.jsx", context={"x":text,"form":form})
+@login_required
 def shows2(request, randoms,receiver):
     if request.method == "POST":
          randoms = random.randint(6288, 7289200298298)
