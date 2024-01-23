@@ -1,3 +1,4 @@
+{% load static %}
 import React from "react";
 import { CaretDown } from "./CaretDown";
 import { LocationPinAlt1 } from "./LocationPinAlt1";
@@ -6,7 +7,7 @@ import { MessageCircleChat } from "./MessageCircleChat";
 import { Notification } from "./Notification";
 import { Plus } from "./Plus";
 import { SearchNormal } from "./SearchNormal";
-import "./style.css";
+import "{% static './style.css' %}";
 
 export const Message = () => {
   return (
