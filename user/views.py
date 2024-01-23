@@ -57,7 +57,7 @@ def create(request):
 def message(request):
 
      texts = textsrecieved.objects.all().values()
-     return render(request=request, template_name="info.html", context={"texts":texts})
+     return render(request=request, template_name="info.jsx", context={"texts":texts})
 
 def add(request):
      if request.method == "POST":
