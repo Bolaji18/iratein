@@ -9,9 +9,13 @@ urlpatterns =[
     path('message/<int:randoms>/<str:receiver>', views.shows2, name='shows2'),
     path('', views.index, name='index'),
     path('create/', views.create, name='create'),
-    path('accounts/login/message', views.message, name='messagess'),
+    path('accounts/login/', views.index, name='messages'),
     path('add', views.add, name='add'),
     path('add2', views.add2, name='add2'),
     path('logout', LogoutView.as_view(), name='logout'),
 
 ]
+
+
+
+
