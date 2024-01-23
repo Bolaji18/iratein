@@ -24,14 +24,14 @@ def index(request):
               return redirect('message')
             else:
                  form = "Invalid Username or Password"
-                 return render(request=request, template_name="index.html", context={"form":form})
+                 return render(request=request, template_name="index.jsx", context={"form":form})
         else:
              form = "Invalid Username or Password"
-             return render(request=request, template_name="index.html", context={"form":form})
+             return render(request=request, template_name="index.jsx", context={"form":form})
 
 
     form = AuthenticationForm()
-    return render(request=request, template_name="index.html", context={'form':form})
+    return render(request=request, template_name="index.jsx", context={'form':form})
 
 
 def create(request):
@@ -42,17 +42,17 @@ def create(request):
            email = request.POST.get('email')
            user = form.save()
            form = "Your have registered successfully,pls return to homepage to login"
-           return render(request=request, template_name="create.html", context={"form":form})
+           return render(request=request, template_name="create.jsx", context={"form":form})
 
        else:
             form = "Your username is currently registered by another user or your password doesn't match, return to registration"
-            return render(request=request, template_name="create.html", context={"form":form})
+            return render(request=request, template_name="create.jsx", context={"form":form})
 
 
 
 
    form= NewUserForm()
-   return render(request=request, template_name="create.html", context={"form":form})
+   return render(request=request, template_name="create.jsx", context={"form":form})
 
 def message(request):
 
@@ -68,10 +68,10 @@ def add(request):
          my_worker= textsrecieved( content=content, sender=sender, receiver=receiver, randoms=randoms)
          my_worker.save()
          form = "Your message was sent successfully"
-         return render(request=request, template_name="prompt.html", context={"form":form})
+         return render(request=request, template_name="create.jsx", context={"form":form})
 
      form= ads()
-     return render(request=request, template_name="add.html", context={"form":form})
+     return render(request=request, template_name="add.jsx", context={"form":form})
 def add2(request):
      if request.method == "POST":
          randoms = random.randint(6288, 7289200298298)
@@ -81,10 +81,10 @@ def add2(request):
          my_worker= textsrecieved( content=content, sender=sender, receiver=receiver, randoms=randoms)
          my_worker.save()
          form = "Your message was sent successfully"
-         return render(request=request, template_name="prompt.html", context={"form":form})
+         return render(request=request, template_name="create.jsx", context={"form":form})
 
      form= ads()
-     return render(request=request, template_name="show.html", context={"form":form})
+     return render(request=request, template_name="add.jsx", context={"form":form})
 def shows(request, randoms,sender):
     if request.method == "POST":
          randoms = random.randint(6288, 7289200298298)
@@ -94,11 +94,11 @@ def shows(request, randoms,sender):
          my_worker= textsrecieved( content=content, sender=send, receiver=receiver, randoms=randoms)
          my_worker.save()
          form = "Your message was sent successfully"
-         return render(request=request, template_name="prompt.html", context={"form":form})
+         return render(request=request, template_name="add.jsx", context={"form":form})
 
     form= ads2()
     text= textsrecieved.objects.get(randoms=randoms)
-    return render(request=request, template_name="show.html", context={"x":text,"form":form})
+    return render(request=request, template_name="add.jsx", context={"x":text,"form":form})
 def shows2(request, randoms,receiver):
     if request.method == "POST":
          randoms = random.randint(6288, 7289200298298)
@@ -108,8 +108,8 @@ def shows2(request, randoms,receiver):
          my_worker= textsrecieved( content=content, sender=send, receiver=receive, randoms=randoms)
          my_worker.save()
          form = "Your message was sent successfully"
-         return render(request=request, template_name="prompt.html", context={"form":form})
+         return render(request=request, template_name="add.jsx", context={"form":form})
 
     form= ads2()
     text= textsrecieved.objects.get(randoms=randoms)
-    return render(request=request, template_name="show.html", context={"x":text,"form":form})
+    return render(request=request, template_name="add2.jsx", context={"x":text,"form":form})
